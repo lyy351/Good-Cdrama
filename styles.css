@@ -1,10 +1,7 @@
-<!-- ============================================================
-     styles.css —— 全站共享样式
-     ============================================================ -->
 :root{
   --ink:#26262a; --ink-soft:#4b4b52; --muted:#8a857c;
-  --paper:#f6f4f0; --paper-2:#eeebe5;
-  --line:#ddd9d2; --line-strong:#c6c0b6;
+  --paper:#f4efe4; --paper-2:#ebe4d5;
+  --line:#d3cbb9; --line-strong:#b3a88f;
   --accent:#8f4a3d; --accent-deep:#6f2e24; --accent-soft:#b07a6c;
   --seal:#a0382c;
 }
@@ -14,8 +11,8 @@ body{
   margin:0;
   background-color:var(--paper);
   background-image:
-    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='paper'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.78 0 0 0 0 0.76 0 0 0 0 0.72 0 0 0 0.035 0'/%3E%3C/filter%3E%3Crect width='240' height='240' filter='url(%23paper)'/%3E%3C/svg%3E"),
-    radial-gradient(ellipse at 50% 0%,rgba(255,255,255,.65),transparent 60%);
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='paper'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.74 0 0 0 0 0.70 0 0 0 0 0.62 0 0 0 0.04 0'/%3E%3C/filter%3E%3Crect width='240' height='240' filter='url(%23paper)'/%3E%3C/svg%3E"),
+    radial-gradient(ellipse at 50% 0%,rgba(255,250,238,.35),transparent 70%);
   background-size:240px 240px, auto;
   background-repeat:repeat, no-repeat;
   color:var(--ink);
@@ -23,6 +20,7 @@ body{
   line-height:1.75;
   font-size:16px;
   -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
 }
 a{color:inherit}
 .wrap{width:min(100% - 48px,880px); margin:auto}
@@ -75,8 +73,8 @@ h1{
   margin-top:22px;
   font-family:-apple-system,"Helvetica Neue",Arial,sans-serif;
   font-size:12px;letter-spacing:.08em;
-  border-top:1px solid var(--line);
-  border-bottom:1px solid var(--line);
+  border-top:1px solid var(--line-strong);
+  border-bottom:1px solid var(--line-strong);
   padding:2px 0;
 }
 .main-nav a{
@@ -96,9 +94,9 @@ h1{
 .page-intro{
   max-width:640px;margin:34px auto 0;text-align:left;
   padding:20px 24px;position:relative;
-  background:rgba(255,255,255,.55);
-  border-top:1px solid var(--line);
-  border-bottom:1px solid var(--line);
+  background:rgba(255,252,246,.55);
+  border-top:1px solid var(--line-strong);
+  border-bottom:1px solid var(--line-strong);
 }
 .page-intro p{margin:0 0 12px;font-size:14.5px;line-height:1.8}
 .page-intro p:last-child{margin-bottom:0}
@@ -107,12 +105,15 @@ h1{
 /* ============ Overview / Table of Contents ============ */
 .overview{
   padding:36px 0;margin:36px 0 0;position:relative;
-  background:rgba(255,255,255,.5);
-  border:1px solid var(--line);border-radius:2px;
+  background:rgba(255,252,246,.6);
+  border:1px solid var(--line-strong);
+  border-radius:2px;
+  box-shadow:0 1px 0 rgba(255,255,255,.6) inset,
+             0 4px 16px -10px rgba(80,60,40,.12);
 }
 .overview::before,.overview::after{
   content:"";position:absolute;width:14px;height:14px;
-  border:1px solid var(--accent);opacity:.45;
+  border:1px solid var(--accent);opacity:.55;
 }
 .overview::before{top:6px;left:6px;border-right:none;border-bottom:none}
 .overview::after{bottom:6px;right:6px;border-left:none;border-top:none}
@@ -130,7 +131,7 @@ h1{
   font-family:-apple-system,"Helvetica Neue",Arial,sans-serif;
   font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;
   color:var(--accent);font-weight:500;margin:0 0 3px;
-  padding-bottom:9px;border-bottom:1px solid var(--line);position:relative;
+  padding-bottom:9px;border-bottom:1px solid var(--line-strong);position:relative;
 }
 .overview-item h4::after{
   content:"";position:absolute;bottom:-1px;left:0;width:24px;height:1px;
@@ -153,7 +154,7 @@ h1{
 .section-head{text-align:center;padding-bottom:32px;position:relative}
 .section-head::after{
   content:"";display:block;width:110px;height:8px;margin:22px auto 0;
-  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='110' height='8' viewBox='0 0 110 8'%3E%3Cpath d='M0 4h32M78 4h32' stroke='%23c6c0b6' stroke-width='1' fill='none'/%3E%3Ccircle cx='46' cy='4' r='1.8' fill='none' stroke='%238f4a3d' stroke-width='1'/%3E%3Ccircle cx='64' cy='4' r='1.8' fill='none' stroke='%238f4a3d' stroke-width='1'/%3E%3C/svg%3E");
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='110' height='8' viewBox='0 0 110 8'%3E%3Cpath d='M0 4h32M78 4h32' stroke='%23b3a88f' stroke-width='1' fill='none'/%3E%3Ccircle cx='46' cy='4' r='1.8' fill='none' stroke='%238f4a3d' stroke-width='1'/%3E%3Ccircle cx='64' cy='4' r='1.8' fill='none' stroke='%238f4a3d' stroke-width='1'/%3E%3C/svg%3E");
   background-repeat:no-repeat;background-position:center;opacity:.75;
 }
 .section-head .eyebrow{font-size:10px;letter-spacing:.3em}
@@ -174,13 +175,13 @@ h1{
 /* ============ Drama card ============ */
 .drama{
   display:grid;grid-template-columns:180px 1fr;gap:28px;
-  padding:50px 0;border-bottom:1px solid var(--line);position:relative;
+  padding:50px 0;border-bottom:1px solid var(--line-strong);position:relative;
 }
 .drama:last-child{border-bottom:none}
 .drama::before{
   content:"";position:absolute;left:0;top:50px;bottom:50px;width:1px;
   background:linear-gradient(to bottom,transparent,var(--line-strong) 20%,var(--line-strong) 80%,transparent);
-  opacity:.5;
+  opacity:.55;
 }
 
 /* poster carousel */
@@ -258,16 +259,16 @@ h1{
 .drama-info{
   margin:20px 0 0 44px;
   padding:14px 20px;
-  background:rgba(255,255,255,.55);
+  background:rgba(255,252,246,.6);
   border-left:2px solid var(--accent);
-  border-top:1px solid var(--line);
-  border-right:1px solid var(--line);
-  border-bottom:1px solid var(--line);
+  border-top:1px solid var(--line-strong);
+  border-right:1px solid var(--line-strong);
+  border-bottom:1px solid var(--line-strong);
 }
 .info-row{
   display:grid;grid-template-columns:120px 1fr;gap:14px;
   align-items:baseline;padding:6px 0;
-  border-bottom:1px dashed rgba(0,0,0,.07);
+  border-bottom:1px dashed rgba(0,0,0,.09);
 }
 .info-row:last-child{border-bottom:none}
 .info-key{
@@ -369,8 +370,8 @@ h1{
 }
 .drama-detail-content{
   margin:22px 0 0 44px;padding:24px 22px 26px;position:relative;
-  background:rgba(255,255,255,.55);
-  border:1px solid var(--line);
+  background:rgba(255,252,246,.6);
+  border:1px solid var(--line-strong);
 }
 .drama-detail-content::before,.drama-detail-content::after{
   content:"";position:absolute;width:12px;height:12px;
@@ -384,8 +385,8 @@ h1{
 }
 .actor-card{
   position:relative;aspect-ratio:3/4;border-radius:2px;cursor:pointer;
-  box-shadow:0 0 0 1px rgba(143,74,61,.12),
-             0 3px 10px -6px rgba(50,45,35,.22);
+  box-shadow:0 0 0 1px rgba(143,74,61,.15),
+             0 3px 10px -6px rgba(50,45,35,.25);
 }
 .actor-card .actor-face{
   position:absolute;inset:0;border-radius:2px;
@@ -424,7 +425,7 @@ h1{
   font-family:-apple-system,"Helvetica Neue",Arial,sans-serif;
   font-size:9.5px;letter-spacing:.2em;text-transform:uppercase;
   color:var(--accent);padding:2px 8px 6px;
-  border-bottom:1px solid var(--line);margin-bottom:4px;
+  border-bottom:1px solid var(--line-strong);margin-bottom:4px;
 }
 .menu-head .cn-lbl{
   display:block;font-family:"Songti SC",serif;
@@ -481,8 +482,9 @@ h1{
 /* ============ Note page ============ */
 .note-page{
   margin:60px 0;padding:48px 40px;
-  background:rgba(255,255,255,.55);
-  border-top:1px solid var(--line);border-bottom:1px solid var(--line);
+  background:rgba(255,252,246,.6);
+  border-top:1px solid var(--line-strong);
+  border-bottom:1px solid var(--line-strong);
   position:relative;
 }
 .note-page::before{
@@ -507,7 +509,7 @@ h1{
 }
 .note-page p.cn-sub{font-size:13px;color:var(--muted);margin-bottom:22px}
 
-/* ============ Article page (why-costume-dramas) ============ */
+/* ============ Article page ============ */
 .article{margin:40px 0 80px;padding:0 8px}
 .article h2{
   font-family:Georgia,serif;font-size:26px;font-weight:400;
@@ -532,7 +534,7 @@ h1{
 .article p.cn-sub{font-size:13px;color:var(--muted);margin-bottom:18px}
 .article blockquote{
   margin:20px 0;padding:14px 22px;
-  background:rgba(255,255,255,.55);
+  background:rgba(255,252,246,.6);
   border-left:3px solid var(--accent-soft);
   font-style:italic;color:var(--ink-soft);
   font-size:14.5px;
@@ -541,7 +543,7 @@ h1{
 
 /* ============ Footer ============ */
 footer{
-  padding:36px 0 60px;border-top:1px solid var(--line);
+  padding:36px 0 60px;border-top:1px solid var(--line-strong);
   font-family:-apple-system,"Helvetica Neue",Arial,sans-serif;
   font-size:11.5px;color:var(--muted);
   text-align:center;letter-spacing:.1em;line-height:2;position:relative;
